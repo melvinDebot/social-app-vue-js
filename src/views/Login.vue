@@ -26,7 +26,7 @@
             <input v-model.trim="signupForm.name" type="text" placeholder="Username" id="name" />
           </div>
           <div>
-            <input v-model.trim="signupForm.title" type="text" placeholder="prénom" id="title" />
+            <input v-model.trim="signupForm.title" type="text" placeholder="name" id="title" />
           </div>
           <div>
             <input v-model.trim="signupForm.email" type="text" placeholder="you@email.com" id="email2" />
