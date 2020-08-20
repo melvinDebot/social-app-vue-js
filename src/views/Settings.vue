@@ -1,7 +1,9 @@
 <template>
   <section id="settings">
     <div class="col1">
-      <h3>Settings</h3>
+      <div class="col2">
+        <h3>Settings</h3>
+      </div>
       <p>Update your profile</p>
 
       <transition name="fade">
@@ -9,10 +11,10 @@
       </transition>
 
       <form @submit.prevent>
-        <label for="name">Name</label>
+        <label for="name">Change your username</label>
         <input v-model.trim="name" type="text" :placeholder="userProfile.name" id="name" />
 
-        <label for="title">Job Title</label>
+        <label for="title">Change your name</label>
         <input v-model.trim="title" type="text" :placeholder="userProfile.title" id="title" />
 
         <button @click="updateProfile()" class="button">Update Profile</button>

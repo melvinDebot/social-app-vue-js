@@ -1,4 +1,71 @@
 // navigation
+header {
+  position: relative;
+  background: $primary;
+  height: 85px;
+  width: 100%;
+  padding: 20px 20px;
+  z-index: 10;
+
+  .header--mobile{
+    display: none;
+  }
+
+
+
+  h3 {
+    display: inline-block;
+    color: $white;
+  }
+
+  ul {
+    float: right;
+    text-align: right;
+    
+
+    li {
+      margin-top: 4px;
+      margin-left: 6px;
+
+      a {
+        display: block;
+        padding: 5px;
+        color: $white;
+      }
+    }
+  }
+}
+@media screen and (max-width: 542px) {
+  header{
+    position: absolute;
+    bottom: 0px;
+    background: white;
+    border-top: 1px solid #F4F4F4;
+    .header--desktop{
+      display: none
+    }
+    .header--mobile{
+      display: block;
+      width: 100%;
+      height: 90%;
+      ul{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        li{
+          .router-link-active, .router-link-exact-active{
+            fill: $primary
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 // login
@@ -72,3 +139,33 @@
 
 
 // settings
+#settings{
+  width: 100%;
+  height: 100vh;
+  
+  .col1{
+    width: 100%;
+    height: 100%;
+    background: $white;
+    text-align: center;
+    p{
+      margin-top: 10px;
+    }
+    .col2{
+      height: 30%;
+      background: $primary;
+      text-align: center;
+      color: $white;
+      padding: 6.5em 0;
+    }
+    .success{
+      color: lightgreen;
+    }
+    form {
+      margin-top: 20px;
+      @media screen and (min-width: 742px){
+        padding: 0px 11em;
+      }
+    }
+  }
+}
