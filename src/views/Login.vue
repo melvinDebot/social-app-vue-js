@@ -3,7 +3,7 @@
     <PasswordReset v-if="showPasswordReset" @close="togglePasswordReset()"></PasswordReset>
     <section>
       <div class="col1">
-        <h1>Vuegram</h1>
+        <img :src="logo" alt="logo" />
       </div>
       <div :class="{ 'signup-form': !showLoginForm }" class="col2">
         <form v-if="showLoginForm" @submit.prevent>
@@ -46,6 +46,7 @@
 
 <script>
 import PasswordReset from '@/components/PasswordReset'
+import logo from '../assets/icons/Logo.svg'
 export default {
   components: {
     PasswordReset
@@ -62,6 +63,7 @@ export default {
         email: '',
         password: ''
       },
+      logo : logo,
       showLoginForm: true,
       showPasswordReset: false
     }
