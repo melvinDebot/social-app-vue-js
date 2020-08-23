@@ -46,7 +46,7 @@
 
 <script>
 import PasswordReset from '@/components/PasswordReset'
-import logo from '../assets/icons/Logo.svg'
+import logo from '../assets/icons/Logo.png'
 export default {
   components: {
     PasswordReset

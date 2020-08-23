@@ -57,7 +57,7 @@
 <script>
 import homeIcon from '../assets/icons/home.svg'
 import editIcon from '../assets/icons/edit.svg'
-import logo from '../assets/icons/Logo.svg'
+import logo from '../assets/icons/Logo.png'
 
 export default {
   data(){
