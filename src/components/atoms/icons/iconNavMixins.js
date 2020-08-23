@@ -22,7 +22,7 @@ export default {
     },
     putColor (to) {
       if ( to.fullPath === this.to ) {
-        this.fill = 'red'
+        this.fill = '#045C14'
       } else {
         this.fill = 'none'
       }

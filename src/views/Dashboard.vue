@@ -5,7 +5,7 @@
     </transition>
     <section>
       <div class="wrapper">
-        <img :src="logo" alt="logo chat App"/>
+        <img :src="logo" alt="logo chat App" @click="scrollTop"/>
       </div>
       <div class="col1">
         <div class="profile">
@@ -24,6 +24,11 @@
       <div class="col2">
         <div v-if="posts.length">
           <div v-for="post in posts" :key="post.id" class="post">
+            <div class="post--text">
+              <p>{{ post.userName }}</p>
+              <span>{{ post.createdOn | formatDate }}</span>
+              <h5>{{ post.content | trimLength }}</h5>
+            </div>
             <ul>
               <li>
                 <a @click="toggleCommentModal(post)">
@@ -43,11 +48,6 @@
               </li>
               <li><a @click="viewPost(post)">view full post</a></li>
             </ul>
-            <div class="post--text">
-              <h5>{{ post.userName }}</h5>
-              <span>{{ post.createdOn | formatDate }}</span>
-              <p>{{ post.content | trimLength }}</p>
-            </div>
           </div>
         </div>
         <div v-else>
@@ -72,9 +72,11 @@
             <p>{{ fullPost.content }}</p>
             <ul>
               <li>
-                <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M21.4359 8.89103C21.4359 13.8014 16.6373 17.7821 10.7179 17.7821C10.0021 17.7821 9.30268 17.7238 8.62613 17.6128C8.03011 17.5551 7.67622 17.6103 7.06531 17.7992C6.83941 17.8691 6.57551 18.0102 6.27306 18.1719C5.59549 18.5343 4.72446 19 3.65387 19C3.6337 19 3.70152 18.9328 3.81759 18.8179C4.20195 18.4373 5.1154 17.5328 5.1154 16.8077V16.4721C2.0466 14.9081 0 12.0978 0 8.89103C0 3.98065 4.79859 0 10.7179 0C16.6373 0 21.4359 3.98065 21.4359 8.89103Z" fill="#045C14"/>
-                </svg>
+                <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3773 2.07064C16.0211 1.62156 14.5447 1.375 13 1.375C6.37258 1.375 1 5.91391 1 11.5129C1 13.6991 1.81905 15.7236 3.21204 17.3794L1.75 24.25L7.62411 20.5791C9.24127 21.2649 11.0673 21.6509 13 21.6509C19.6274 21.6509 25 17.112 25 11.5129C25 10.4858 24.8192 9.49432 24.483 8.56001" stroke="#045C14" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 1V7" stroke="#045C14" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25.0001 4H19.0001" stroke="#045C14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
                 <a>
                   {{ fullPost.comments }}
                 </a>
@@ -126,6 +128,20 @@ export default {
       logo : logo
     }
   },
+  mounted(){
+    let prevScrollpos = window.pageYOffset;
+    let body = document.querySelector('body')
+    let wrapper = document.querySelector('.wrapper')
+    window.addEventListener('scroll', ()=> {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos){
+        wrapper.style.top = "0px"
+      } else {
+        wrapper.style.top = "-61px"
+      }
+      prevScrollpos = currentScrollPos;
+    })
+  },
   computed: {
     ...mapState(['userProfile', 'posts'])
   },
@@ -133,6 +149,10 @@ export default {
     createPost() {
       this.$store.dispatch('createPost', { content: this.post.content })
       this.post.content = ''
+    },
+    scrollTop(){
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     },
     toggleCommentModal(post) {
       this.showCommentModal = !this.showCommentModal
