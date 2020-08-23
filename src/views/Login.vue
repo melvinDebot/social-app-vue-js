@@ -12,7 +12,12 @@
             <input v-model.trim="loginForm.email" type="text" placeholder="mail" id="email1" />
           </div>
           <div>
-            <input v-model.trim="loginForm.password" type="password" placeholder="******" id="password1" />
+            <input
+              v-model.trim="loginForm.password"
+              type="password"
+              placeholder="******"
+              id="password1"
+            />
           </div>
           <button @click="login()" class="button">Log In</button>
           <div class="extras">
@@ -29,10 +34,20 @@
             <input v-model.trim="signupForm.title" type="text" placeholder="name" id="title" />
           </div>
           <div>
-            <input v-model.trim="signupForm.email" type="text" placeholder="you@email.com" id="email2" />
+            <input
+              v-model.trim="signupForm.email"
+              type="text"
+              placeholder="you@email.com"
+              id="email2"
+            />
           </div>
           <div>
-            <input v-model.trim="signupForm.password" type="password" placeholder="password min 6 characters" id="password2" />
+            <input
+              v-model.trim="signupForm.password"
+              type="password"
+              placeholder="password min 6 characters"
+              id="password2"
+            />
           </div>
           <button @click="signup()" class="button">Sign Up</button>
           <div class="extras">
@@ -46,7 +61,8 @@
 
 <script>
 import PasswordReset from '@/components/PasswordReset'
-import logo from '../assets/icons/Logo.svg'
+const logo = require('@/assets/icons/logo.svg')
+
 export default {
   components: {
     PasswordReset

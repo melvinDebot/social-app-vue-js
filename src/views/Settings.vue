@@ -26,7 +26,8 @@
 
 <script>
 import { mapState } from 'vuex'
-import logo from '../assets/icons/Logo.svg'
+const logo = require('@/assets/icons/logo.svg')
+
 export default {
   data() {
     return {
