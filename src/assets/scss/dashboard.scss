@@ -84,24 +84,20 @@
         width: 80%;
         margin-left: 15px;
         h5{
-          font-size: 15px;
-          font-weight: 700;
-          margin: 10px 0px;
+          font-weight: 600;
         }
         span {
-          font-size: 12px;
           font-weight: 200;
+          margin-bottom: 10px;
+          color: #a0bdd0;
         }
-        p{
-          font-size: 15px;
 
-        }
       }
     }
   }
   .wrapper{
     width: 100%;
-    height:62px;
+    height:65px;
     background: $primary;
     display: flex;
     position: fixed;

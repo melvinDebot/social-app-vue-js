@@ -9,13 +9,13 @@
         <form v-if="showLoginForm" @submit.prevent>
           <h1>Welcome Back</h1>
           <div>
-            <input v-model.trim="loginForm.email" type="text" placeholder="mail" id="email1" />
+            <input v-model.trim="loginForm.email" type="text" placeholder="Your email" id="email1" />
           </div>
           <div>
             <input
               v-model.trim="loginForm.password"
               type="password"
-              placeholder="******"
+              placeholder="Your password"
               id="password1"
             />
           </div>

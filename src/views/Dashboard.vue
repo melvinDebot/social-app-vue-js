@@ -13,9 +13,9 @@
           <p>Description : {{ userProfile.title }}</p>
           <div class="create-post">
             <span>Close</span>
-            <p>create a post</p>
+            <p>Ask your question</p>
             <form @submit.prevent>
-              <textarea v-model.trim="post.content" placeholder="What’s happening ?"></textarea>
+              <textarea v-model.trim="post.content" placeholder="your question"></textarea>
               <button @click="createPost()" :disabled="post.content === ''" class="button">post</button>
             </form>
           </div>
