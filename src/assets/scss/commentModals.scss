@@ -1,37 +1,33 @@
 // Comments modals
 
-.c-container{
-  position: absolute;
-  background: $white;
-  border: 1px solid $grey;
-  padding: 0 10px;
-  z-index: 8;
-  width: 90%;
-  height: 290px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @media screen and (min-width: 742px){
-    width: 50%;
-  }
-  a{
-    position: absolute;
-    margin: 5px 5px;
-    right: 0px;
-  }
-  h5{
-    margin: 10px 10px;
-  }
-  button{
+.c-modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba($dark, 0.4);
+  z-index: 999;
+  .c-container{
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    max-width: 600px;
+    margin: 30vh auto 0;
+    padding: 2rem;
+    border-radius: 3px;
+    background: $white;
+    box-shadow: 0 0 20px 0 rgba($dark, 0.5);
+    a{
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      padding: 5px;
+    }
+    .button{
+      margin-top: 1rem;
+    }
   }
 }
+
 .p-modal{
   position: fixed;
   top: 0;
