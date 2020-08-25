@@ -1,0 +1,40 @@
+// login
+#login{
+  
+  width: 100%;
+  height: 100vh;
+  .col1{
+    width: 100%;
+    height: 35%;
+    background: $primary;
+    padding: 6.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+      text-align: center;
+      line-height: 35%;
+      color: $white;
+    }
+  }
+  .col2{
+    background: $white;
+    height: 65%;
+    @media screen and (min-width: 742px){
+      padding: 0px 9em;
+    }
+    form {
+      h1{
+        padding-top: 14px;
+      }
+      text-align: center;
+      .extras{
+        margin-top: 20px;
+        a {
+          padding-left: 15px;
+          
+        }
+      }
+    }
+  }
+}
