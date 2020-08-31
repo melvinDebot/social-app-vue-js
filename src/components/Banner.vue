@@ -1,6 +1,6 @@
 <template>
-  <div class="banner">
-    <button class="banner-button" :style="{'display' : installBtn}" @click="install">
+  <div class="banner" :style="{'display' : installBtn}">
+    <button class="banner-button"  @click="install">
       Install
     </button>
   </div>
@@ -41,4 +41,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.banner{
+  width: 50%;
+  height: 50%;
+  background: red;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+
 
