@@ -10,7 +10,7 @@
       <div class="col1">
         <div class="profile">
           <p>Your username : <span>{{ userProfile.name }}</span></p>
-          <p>Description : {{ userProfile.title }}</p>
+          <!-- <p>Description : {{ userProfile.title }}</p> -->
           <div class="create-post">
             <span>Close</span>
             <p>Ask your question</p>
