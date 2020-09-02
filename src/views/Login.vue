@@ -1,7 +1,7 @@
 <template>
   <div id="login">
     <PasswordReset v-if="showPasswordReset" @close="togglePasswordReset()"></PasswordReset>
-    <install-prompt></install-prompt>
+    
     <section>
       <div class="col1">
         <img :src="logo" alt="logo" />
