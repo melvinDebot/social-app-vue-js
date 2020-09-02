@@ -1,7 +1,7 @@
 <template>
   <div id="login">
     <PasswordReset v-if="showPasswordReset" @close="togglePasswordReset()"></PasswordReset>
-    
+    <!-- <install-prompt ></install-prompt> -->
     <section>
       <div class="col1">
         <img :src="logo" alt="logo" />
@@ -72,6 +72,7 @@ export default {
   },
   data() {
     return {
+      show:false,
       loginForm: {
         email: '',
         password: ''
@@ -87,7 +88,14 @@ export default {
       showPasswordReset: false
     }
   },
+  mounted(){
+    this.show = true
+    console.log(this.show)
+  },
   methods: {
+    toggleShow(){
+      this.show = !this.show
+    },
     toggleForm() {
       this.showLoginForm = !this.showLoginForm
     },

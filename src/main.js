@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 import { auth } from './firebase'
 import './assets/scss/app.scss'
+import Notifications from 'vue-notification'
+
+Vue.use(Notifications)
 
 Vue.config.productionTip = false
 
