@@ -1,6 +1,7 @@
 <template>
   <div id="login">
     <PasswordReset v-if="showPasswordReset" @close="togglePasswordReset()"></PasswordReset>
+    <install-prompt></install-prompt>
     <section>
       <div class="col1">
         <img :src="logo" alt="logo" />
@@ -61,11 +62,13 @@
 
 <script>
 import PasswordReset from '@/components/PasswordReset'
+import InstallPrompt from '@/components/InstallPrompt'
 const logo = require('@/assets/icons/logo.svg')
 
 export default {
   components: {
-    PasswordReset
+    PasswordReset,
+    'install-prompt' : InstallPrompt
   },
   data() {
     return {
